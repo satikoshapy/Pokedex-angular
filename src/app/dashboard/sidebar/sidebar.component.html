@@ -1,32 +1,37 @@
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col">
-            <ul>
-                <li>
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
                 filter
                 </li>
-                <li>
+                <li class="nav-item">
                     another filter
                 </li>
             </ul>
         </div>
     </div>
     <div class="row">
-        <div class="col">
+        <div class="col-lg mt-3 pt-5 pb-3">
             <h1>Pokedex</h1>
         </div>
     </div>
     <div class="row">
-        <div class="col">
+        <div class="col-lg pb-3">
             <input type="text" placeholder="Pokemon zoeken">
         </div>
     </div>
     <div class="row">
-        <div class="col">
-            <app-button [image]="teamImg" [title]="teamTitle"></app-button>
+        <div class="col-lg-6">
+            <app-button class="img-fluid col-lg-12 w-100" [image]="teamImg" [title]="teamTitle"></app-button>
         </div>
-        <div class="col">
-            <app-button [image]="favImg" [title]="favTitle"></app-button>
+        <div class="col-lg-6 p-0 m-0">
+            <app-button class="img-fluid col-lg-12 w-100" [image]="favImg" [title]="favTitle"></app-button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg pb-3 p-0 m-0">
+            <app-pokemons></app-pokemons>
         </div>
     </div>
 </div>
