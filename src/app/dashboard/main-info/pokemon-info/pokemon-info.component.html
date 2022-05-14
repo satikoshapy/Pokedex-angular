@@ -16,14 +16,11 @@
                     <tbody>
                       <tr>
                         <td scope="row" class="text-muted">Type</td>
-                        <td><div class="chip">
-                            Tag 220
-                            <i class="close fas fa-times"></i>
-                          </div></td>
+                        <td><button class="btn btn-succes" *ngFor="let type of pokemonDetails.types">{{type.type.name}}</button></td>
                       </tr>
                       <tr>
                         <td scope="row" class="text-muted">Nummer</td>
-                        <td>Jacob</td>
+                        <td>{{pokemonDetails.id}}</td>
                       </tr>
                       <tr>
                         <td scope="row" class="text-muted">Gewicht</td>

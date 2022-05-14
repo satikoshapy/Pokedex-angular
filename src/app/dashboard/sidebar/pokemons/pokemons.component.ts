@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { DataStorageService } from 'src/app/data-storage.service';
+import { Pokemon } from 'src/shared/models/pokemon.model';
 
 @Component({
   selector: 'app-pokemons',
@@ -7,16 +8,22 @@ import { DataStorageService } from 'src/app/data-storage.service';
   styleUrls: ['./pokemons.component.css']
 })
 export class PokemonsComponent implements OnInit {
-  pokemons$!: any[];
+  pokemons$!: Pokemon[];
+  @Output() pokemonId = new EventEmitter<number>();
   constructor(private dataStorage: DataStorageService) { }
-
+  
   ngOnInit(): void {
-
+    
     this.dataStorage.getAllPokemons().subscribe( 
       data => {
         console.log("ALL Pokemons")
         this.pokemons$ = data;
+        console.log(this.pokemons$)
       })
+  }
+
+  getPokemonById(id:number){
+    this.pokemonId.emit(id)
   }
 
 }

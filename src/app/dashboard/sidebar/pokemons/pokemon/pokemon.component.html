@@ -1,1 +1,24 @@
-<p>pokemon works!</p>
+<div class="card p-0 mb-4 d-flex d-wrap" style="width: 25rem; padding: 20px;">
+    <div class="card-body">
+      <table class="table table-borderless">
+        <tbody class="m-0 p-0">
+          <tr>
+            <th scope="row"><img src={{pokemon.sprites.front_default}} alt=""></th>
+            <td></td>
+            <td>{{pokemon.name}}</td>
+            <td><button type="button" class="btn btn-success">Success</button></td>
+            <td><button type="button" class="btn btn-success">Success</button></td>
+            <td><button (click)="onSelect(pokemon.id)"><i class="fa-solid fa-angle-right"></i></button></td>
+          </tr>
+         <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td class="text-muted" style="font-weight: 400;
+            font-size: 15px;
+            line-height: 18px;">Nr.{{pokemon.id}}</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>

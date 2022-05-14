@@ -1,10 +1,10 @@
 <div class="container-fluid">
     <div class="row">
       <div class="col-4">
-        <app-sidebar></app-sidebar>
+        <app-sidebar (pokemonId)="getPokemonById($event)"></app-sidebar>
       </div>
       <div class="col-8">
-        <app-main-info></app-main-info>
+        <app-main-info [pokemonDetails]="pokemonDetails$"></app-main-info>
       </div>
     </div>
   </div>

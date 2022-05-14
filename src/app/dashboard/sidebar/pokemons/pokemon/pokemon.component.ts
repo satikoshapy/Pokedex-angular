@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Pokemon } from 'src/shared/models/pokemon.model';
+import { PokemonType } from 'src/shared/models/type.model';
 
 @Component({
   selector: 'app-pokemon',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pokemon.component.css']
 })
 export class PokemonComponent implements OnInit {
-
+  @Input() pokemon!:Pokemon;
+  @Output() pokemonId = new EventEmitter<number>();
   constructor() { }
-
+  
   ngOnInit(): void {
+    
+    
+    //console.log(typeof(this.pokemon.sprites.front_default))
   }
+    onSelect(id:number) {
+      console.log(id)
+      this.pokemonId.emit(id);
+    }
+  
 
 }

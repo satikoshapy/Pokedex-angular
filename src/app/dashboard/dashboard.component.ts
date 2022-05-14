@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,  OnInit } from '@angular/core';
+import { PokemonDetail } from 'src/shared/models/pokemon-details.model';
+import { DataStorageService } from '../data-storage.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor() { }
+  pokemonDetails$!:PokemonDetail
+  constructor(private dataStorage: DataStorageService) { }
 
   ngOnInit(): void {
   }
-
+  getPokemonById(id:number){
+  this.dataStorage.getPokemonById(id).subscribe(
+    data => {
+      console.log("ALL Pokemons")
+      this.pokemonDetails$ = data;
+      console.log(this.pokemonDetails$)
+    })
+  }
 }

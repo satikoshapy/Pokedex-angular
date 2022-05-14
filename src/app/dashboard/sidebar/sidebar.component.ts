@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,10 +9,17 @@ export class SidebarComponent implements OnInit {
   teamImg = "../../../../assets/img/teamImg.png";
   favImg = "../../../../assets/img/favImg.png";
   teamTitle = "Mijn Team";
-  favTitle = "Favorieten"
+  favTitle = "Favorieten";
+  @Output() pokemonId = new EventEmitter<number>();
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onPokemonId(id:number){
+    this.pokemonId.emit(id);
+  }
+
 }
+
+
