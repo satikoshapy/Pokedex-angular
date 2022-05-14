@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataStorageService } from 'src/app/data-storage.service';
 
 @Component({
   selector: 'app-pokemons',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pokemons.component.css']
 })
 export class PokemonsComponent implements OnInit {
-
-  constructor() { }
+  pokemons$!: any[];
+  constructor(private dataStorage: DataStorageService) { }
 
   ngOnInit(): void {
+
+    this.dataStorage.getAllPokemons().subscribe( 
+      data => {
+        console.log("ALL Pokemons")
+        this.pokemons$ = data;
+      })
   }
 
 }
