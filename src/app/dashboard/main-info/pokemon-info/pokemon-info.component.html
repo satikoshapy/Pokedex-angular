@@ -1,6 +1,6 @@
 <div class="container m-0 p-0">
             <div class="container-fluid mr-0 pr-0" style="width: 22rem;">
-                <img src="../../../../assets/img/def.png" class="card-img-top mr-0" alt="...">
+                <img src={{pokemonDetails.sprites.front_default}} class="card-img-top mr-0 zoom" alt="...">
             </div>
             <div class="container">
               <div class="row">
@@ -24,23 +24,23 @@
                       </tr>
                       <tr>
                         <td scope="row" class="text-muted">Gewicht</td>
-                        <td>Larry</td>
+                        <td>{{pokemonDetails.weight}}</td>
                       </tr>
                       <tr>
                         <td scope="row" class="text-muted">Hoogte</td>
-                        <td>Larry</td>
+                        <td>{{pokemonDetails.height}}</td>
                       </tr>
                       <tr>
                         <td scope="row" class="text-muted">Categorie</td>
-                        <td>Larry</td>
+                        <td>N/A</td>
                       </tr>
                       <tr>
                         <td scope="row" class="text-muted">Geslacht</td>
-                        <td>Larry</td>
+                        <td>N/A</td>
                       </tr>
                       <tr>
                         <td scope="row" class="text-muted">Vaardigheden</td>
-                        <td>Larry</td>
+                        <td *ngFor="let ability of pokemonDetails.abilities">{{ability.is_hidden === false && ability.ability.name || ability.is_hidden === true && ''}}</td>
                         
                       </tr>
                     </tbody>

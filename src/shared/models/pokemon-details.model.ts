@@ -9,7 +9,7 @@ import { PokemonType } from "./type.model"
 
 export class PokemonDetail {
     constructor(
-        public ability: Abilities[],
+        public abilities: Abilities[],
         public base_experience: number,
         public forms: Forms[],
         public height: number,

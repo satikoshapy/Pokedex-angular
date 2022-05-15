@@ -12,6 +12,13 @@ export class DashboardComponent implements OnInit {
   constructor(private dataStorage: DataStorageService) { }
 
   ngOnInit(): void {
+
+    this.dataStorage.getPokemonById(1).subscribe(
+      data => {
+        console.log("Initial pokemon")
+        this.pokemonDetails$ = data;
+        console.log(this.pokemonDetails$)
+      })
   }
   getPokemonById(id:number){
   this.dataStorage.getPokemonById(id).subscribe(

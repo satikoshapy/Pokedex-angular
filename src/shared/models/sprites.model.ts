@@ -7,6 +7,16 @@ export class Sprites {
         public front_default: string,
         public front_female: string,
         public front_shiny: string,
-        public front_shiny_female: string
+        public front_shiny_female: string,
+        public other: Dream
     ) {}
 }
+
+export class Dream {
+    constructor(
+         public front_default: string, 
+         public front_female: string
+          
+    ) {}
+}
+
