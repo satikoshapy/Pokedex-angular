@@ -10,24 +10,23 @@ export class DetailsComponent implements OnInit {
   @Input() pokemonDetails!:PokemonDetail;
   total!: number;
   constructor() {
-    this.getTotal();
+    
    }
 
-  ngOnChange(){
-    
-    
+  ngOnChanges(){
+    this.getTotal();
     this.ngOnInit();
   }
 
   ngOnInit(): void {
-    
+    this.getTotal();
   }
 
   getTotal() {
 
-    setTimeout(() => {
-      this.total = this.pokemonDetails.stats.reduce((a,b) => a + b.base_stat, 0);
-    }, 1000);
+    this.total = this.pokemonDetails.stats.reduce((a,b) => a + b.base_stat, 0);
+    return this.total;
+    
     
   }
   
