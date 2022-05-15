@@ -23,3 +23,39 @@ letter-spacing: 0.374px;
 
 color: #000000;
 }
+
+table {
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.type-chip{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 3px 7px;
+    
+    border-radius: 100px;
+    color: white;
+}
+
+.poison {
+    background:#BA7EC8;
+}
+
+.grass {
+    background: #95C24D;
+}
+
+.water {
+    background: #4592C3;
+}
+
+.normal {
+    background: #A3ACAE;
+}
+
+.fire {
+    background: #FD7D24;
+}

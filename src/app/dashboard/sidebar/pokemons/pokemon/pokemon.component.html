@@ -1,4 +1,5 @@
-<div class="card p-0 mb-4 d-flex d-wrap" style="width: 25rem; padding: 20px;">
+<div class="container">
+<div class="card p-0 mb-4 w-100 d-flex d-wrap">
     <div class="card-body">
       <table class="table table-borderless">
         <tbody class="m-0 p-0">
@@ -6,8 +7,9 @@
             <th scope="row"><img src={{pokemon.sprites.front_default}} alt=""></th>
             <td></td>
             <td>{{pokemon.name}}</td>
-            <td><button type="button" class="btn btn-success">Success</button></td>
-            <td><button type="button" class="btn btn-success">Success</button></td>
+            <td  *ngFor="let type of pokemon.types">
+                <div class="type-chip {{type.type.name}}"> {{type.type.name}}</div>
+            </td>
             <td><button (click)="onSelect(pokemon.id)"><i class="fa-solid fa-angle-right"></i></button></td>
           </tr>
          <tr>
@@ -21,4 +23,5 @@
         </tbody>
       </table>
     </div>
+</div>
 </div>
