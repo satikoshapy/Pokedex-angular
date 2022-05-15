@@ -12,6 +12,10 @@ export class MainInfoComponent implements OnInit {
   
   constructor() { }
 
+  ngOnChanes() {
+    this.ngOnInit();
+  }
+
   ngOnInit(): void {
     
   }
