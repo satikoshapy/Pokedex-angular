@@ -30,3 +30,32 @@ border-radius: 10px;
   .zoom:hover {
     transform: scale(1.5); /* (150% zoom - */
   }
+.type-chip{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 3px 7px;
+    
+    border-radius: 100px;
+    color: white;
+}
+
+.poison {
+    background:#BA7EC8;
+}
+
+.grass {
+    background: #95C24D;
+}
+
+.water {
+    background: #4592C3;
+}
+
+.normal {
+    background: #A3ACAE;
+}
+
+.fire {
+    background: #FD7D24;
+}

@@ -16,7 +16,9 @@
                     <tbody>
                       <tr>
                         <td scope="row" class="text-muted">Type</td>
-                        <td><button class="btn btn-succes" *ngFor="let type of pokemonDetails.types">{{type.type.name}}</button></td>
+                        <td  *ngFor="let type of pokemonDetails.types">
+                          <div class="type-chip {{type.type.name}}"> {{type.type.name}}</div>
+                        </td>
                       </tr>
                       <tr>
                         <td scope="row" class="text-muted">Nummer</td>
