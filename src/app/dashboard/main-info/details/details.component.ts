@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DataStorageService } from 'src/app/data-storage.service';
+import { EvolutionChain, EvolutionUrl } from 'src/shared/models/evolution-chain.model';
 import { PokemonDetail } from 'src/shared/models/pokemon-details.model';
 
 @Component({
@@ -9,7 +11,10 @@ import { PokemonDetail } from 'src/shared/models/pokemon-details.model';
 export class DetailsComponent implements OnInit {
   @Input() pokemonDetails!:PokemonDetail;
   total!: number;
-  constructor() {
+  pokemon_id!:any;
+  evolutionChainUrl!:string;
+  evolutionChains$!: EvolutionChain;
+  constructor(private dataStorage: DataStorageService) {
     
    }
 
@@ -20,6 +25,26 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getTotal();
+
+    this.pokemon_id = localStorage.getItem('selectedPokemonID');
+
+    console.log(this.pokemon_id)
+    
+    setTimeout(() => {
+      this.dataStorage.getEvolutionChainUrl(this.pokemon_id).subscribe(
+        data => {
+          console.log(data.evolution_chain.url)
+          this.evolutionChainUrl = data.evolution_chain.url
+        })
+      this.dataStorage.getEvolutionChain(this.evolutionChainUrl).subscribe(
+        data => 
+        {
+          this.evolutionChains$ = data.chain;
+          console.log(this.evolutionChains$)
+        }
+      )
+    }, 1500);
+    
   }
 
   getTotal() {

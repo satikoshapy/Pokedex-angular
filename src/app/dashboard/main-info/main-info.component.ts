@@ -9,6 +9,7 @@ import { PokemonDetail } from 'src/shared/models/pokemon-details.model';
 export class MainInfoComponent implements OnInit {
   @Input() pokemonDetails!:PokemonDetail
   pokemonName = "Bulbasaur" //default for now
+  
   constructor() { }
 
   ngOnInit(): void {

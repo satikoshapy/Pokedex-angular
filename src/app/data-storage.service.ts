@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Pokemon } from 'src/shared/models/pokemon.model';
+import { EvolutionUrl } from 'src/shared/models/evolution-chain.model';
 
 @Injectable({
   providedIn: 'root'
@@ -17,5 +18,13 @@ export class DataStorageService {
 
   getPokemonById(id: number): Observable<any> {
     return this.http.get<any>(this.url + id)
+  }
+
+  getEvolutionChainUrl(id: number): Observable<EvolutionUrl> {
+    return this.http.get<EvolutionUrl>('https://pokeapi.co/api/v2/pokemon-species/' + id)
+  }
+
+  getEvolutionChain(url:string): Observable<any> {
+    return this.http.get<any>(url)
   }
 }

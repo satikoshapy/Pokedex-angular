@@ -18,6 +18,8 @@ export class SidebarComponent implements OnInit {
 
   onPokemonId(id:number){
     this.pokemonId.emit(id);
+
+    localStorage.setItem("selectedPokemonID", JSON.stringify(id));
   }
 
 }
