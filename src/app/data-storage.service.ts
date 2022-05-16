@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Pokemon } from 'src/shared/models/pokemon.model';
 import { EvolutionUrl } from 'src/shared/models/evolution-chain.model';
+import axios from 'axios';
 
 @Injectable({
   providedIn: 'root'
@@ -20,11 +21,17 @@ export class DataStorageService {
     return this.http.get<any>(this.url + id)
   }
 
-  getEvolutionChainUrl(id: number): Observable<EvolutionUrl> {
-    return this.http.get<EvolutionUrl>('https://pokeapi.co/api/v2/pokemon-species/' + id)
-  }
-
-  getEvolutionChain(url:string): Observable<any> {
-    return this.http.get<any>(url)
+  getEvolutionChainUrl(id: number) {
+    this.http.get<any>('https://pokeapi.co/api/v2/pokemon-species/' + id).subscribe(
+      data => {
+        console.log(data.evolution_chain.url);
+        axios.get(data.evolution_chain.url)
+        .then( response => {
+          console.log(response.data);
+          
+          localStorage.setItem('evolutionChain', JSON.stringify(response.data.chain));
+        })
+        
+      })
   }
 }

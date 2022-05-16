@@ -1,0 +1,39 @@
+<div class="card-body p-0" *ngFor="let specie of species">
+    <div class="row d-flex d-row">
+    <div class="col-3 p-2 d-flex justify-content-start">
+      <img class="ml-3" src={{specie.sprites.front_default}} alt="">
+    </div>
+    <div class="col-3 p-2">
+    <table class="table table-borderless">
+      <tbody class="m-0 p-0">
+        <tr class="d-flex d-wrap d-flex justify-content-start">
+          <td>{{specie.name}}</td>
+        </tr>
+        <tr class="d-flex d-wrap d-flex justify-content-start">
+          <td class="text-muted" style="font-weight: 400;
+          font-size: 15px;
+          line-height: 18px;">Nr.{{specie.id}}</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-6 p-2 d-flex justify-content-end">
+    <table>
+      <tbody class="">
+        <tr class="d-flex d-wrap d-flex justify-content-end">
+      <td  *ngFor="let type of specie.types.reverse()">
+        <div 
+        class="type-chip w-100 d-flex justify-content-center pl-2 pr-2 {{type.type.name}}" 
+        style="font-weight: 400; font-size: 12px;line-height: 14px;"
+        > {{type.type.name}}
+      </div>
+      </td>
+      <td class="ml-10"><button style="border:none; background: none; color:gray; padding-top: 0px"><i class="fa-solid fa-angle-right"></i></button></td>
+    </tr>
+     </tbody>
+    </table>
+  </div>
+  </div>
+  </div>

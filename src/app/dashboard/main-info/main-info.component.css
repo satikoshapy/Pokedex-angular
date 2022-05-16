@@ -30,6 +30,29 @@
 .bug {
     background: linear-gradient(109.73deg, #65CB9A 0%, #15D0DC 100%);
 }
+
+.fairy {
+    background-color: #f9d1b7;
+    background-image: linear-gradient(315deg, #f9d1b7 0%, #f894a4 74%);
+ 
+}
+
+.psychic {
+    background-color: #ee5166;
+    background-image: linear-gradient(315deg, #ee5166 0%, #f08efc 74%);
+}
+
+.electric {
+    background-color: #f39f86;
+   background-image: linear-gradient(315deg, #f39f86 0%, #f9d976 74%);
+}
+
+.ground {
+    background-color: #69140e;
+    background-image: linear-gradient(315deg, #69140e 0%, #d58936 74%);
+
+
+}
 .pokemon-name {
     font-family: 'SF Pro Display';
 font-style: normal;

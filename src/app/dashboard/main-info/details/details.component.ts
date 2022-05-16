@@ -26,24 +26,7 @@ export class DetailsComponent implements OnInit {
   ngOnInit(): void {
     this.getTotal();
 
-    this.pokemon_id = localStorage.getItem('selectedPokemonID');
-
-    console.log(this.pokemon_id)
     
-    setTimeout(() => {
-      this.dataStorage.getEvolutionChainUrl(this.pokemon_id).subscribe(
-        data => {
-          console.log(data.evolution_chain.url)
-          this.evolutionChainUrl = data.evolution_chain.url
-        })
-      this.dataStorage.getEvolutionChain(this.evolutionChainUrl).subscribe(
-        data => 
-        {
-          this.evolutionChains$ = data.chain;
-          console.log(this.evolutionChains$)
-        }
-      )
-    }, 1500);
     
   }
 
@@ -53,6 +36,21 @@ export class DetailsComponent implements OnInit {
     return this.total;
     
     
+  }
+
+  onSelected(){
+    this.pokemon_id = localStorage.getItem('selectedPokemonID');
+
+    console.log(this.pokemon_id)
+
+    this.dataStorage.getEvolutionChainUrl(this.pokemon_id);
+    
+    setTimeout(() => {
+      
+      this.evolutionChains$ = JSON.parse(localStorage.getItem('evolutionChain') || '{}');
+
+      
+    }, 500);
   }
   
 

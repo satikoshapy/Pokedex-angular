@@ -2,7 +2,9 @@ import { Move } from "./move.model";
 
 export class EvolutionChain {
     constructor(
+        public evolution_details: [],
         public evolves_to: evolvesTo[],
+        public is_baby: boolean,
         public species: Move
        
     ) {}

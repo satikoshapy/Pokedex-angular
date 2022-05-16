@@ -12,6 +12,8 @@ import { PokemonComponent } from './dashboard/sidebar/pokemons/pokemon/pokemon.c
 import { MainInfoComponent } from '../app/dashboard/main-info/main-info.component';
 import { PokemonInfoComponent } from './dashboard/main-info/pokemon-info/pokemon-info.component';
 import { DetailsComponent } from './dashboard/main-info/details/details.component';
+import { EvolutionsComponent } from './dashboard/main-info/details/evolutions/evolutions.component';
+import { EvolutionComponent } from './dashboard/main-info/details/evolutions/evolution/evolution.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { DetailsComponent } from './dashboard/main-info/details/details.componen
     PokemonComponent,
     MainInfoComponent,
     PokemonInfoComponent,
-    DetailsComponent
+    DetailsComponent,
+    EvolutionsComponent,
+    EvolutionComponent
   ],
   imports: [
     BrowserModule,
