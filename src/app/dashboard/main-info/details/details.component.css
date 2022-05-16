@@ -31,6 +31,30 @@ table {
     border: purple 1px solid;
 }
 
+.level-chip_two {
+  background: linear-gradient(109.73deg, rgba(101, 203, 154, 0.2) 0%, rgba(21, 208, 220, 0.2) 100%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 3px 7px;
+    
+    border-radius: 30px;
+    color: #65CB9A;
+    border: #65CB9A 1px solid;
+}
+
+.level-chip_three {
+  background: linear-gradient(109.73deg, rgba(237, 202, 77, 0.3) 0%, rgba(231, 142, 29, 0.233826) 66.17%, rgba(228, 112, 5, 0.2) 100%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 3px 7px;
+    
+    border-radius: 30px;
+    color: #EDCA4D;
+    border: #EDCA4D 1px solid;
+}
+
 h3 {
   font-family: 'SF Pro Text';
   font-style: normal;

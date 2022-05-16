@@ -17,22 +17,24 @@
         <input type="text" placeholder="Pokemon zoeken" />
       </div>
     </div>
-    <div class="row" style="margin-bottom: 10px">
-      <div class="col-lg-6" style="padding: 0">
-        <app-button
-          class="img-fluid col-lg-12 w-100"
-          [image]="teamImg"
-          [title]="teamTitle"
-        ></app-button>
-      </div>
-      <div class="col-lg-6 p-0 m-0">
-        <app-button
-          class="img-fluid col-lg-12 w-100"
-          [image]="favImg"
-          [title]="favTitle"
-        ></app-button>
-      </div>
-    </div>
+    
+          <div class="row mb-3 p-2">
+            <div class="col-5 m-0 p-0 d-flex justify-content-start">
+                <app-button
+                        class="img-fluid col-lg-12 w-100 m-0 p-0"
+                        [image]="teamImg"
+                        [title]="teamTitle"
+                      ></app-button>
+            </div>
+            <div class="col-5 m-0 p-0 d-flex justify-content-end">
+                <app-button
+                        class="img-fluid col-lg-12 w-100 m-0 p-0"
+                        [image]="favImg"
+                        [title]="favTitle"
+                        ></app-button>
+            </div>
+          </div>
+      
     <div class="row" style="height: 550px; overflow-y: scroll">
       <div class="col-lg pb-3 p-0 m-0">
         <app-pokemons (pokemonId)="onPokemonId($event)"></app-pokemons>

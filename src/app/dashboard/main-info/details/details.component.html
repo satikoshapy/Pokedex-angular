@@ -40,15 +40,17 @@
                 <div class="card-body p-2">
                     <table class="table table-borderless p-0">
                       <tbody>
-                        <tr *ngFor="let move of pokemonDetails.moves.slice(0, 2) let i=index">
-                          <td scope="row" class="p-0 m-0"><div class="w-100 d-flex justify-content-center" [ngClass]="pokemonDetails.moves.slice(0, 2)[i].version_group_details[0].level_learned_at < 2 ? 'level-chip_one' : ''">Level {{pokemonDetails.moves.slice(0, 2)[i].version_group_details[0].level_learned_at}}</div></td>
-                          <td>{{pokemonDetails.moves.slice(0, 2)[i].move.name}}</td>
-                          
+                        <tr>
+                          <td scope="row" class="p-0 m-0"><div class="w-100 d-flex justify-content-center" [ngClass]="pokemonDetails.moves[0].version_group_details[0].level_learned_at <= 3 ? 'level-chip_one' : pokemonDetails.moves[0].version_group_details[0].level_learned_at <= 6 ? 'level-chip_two' : pokemonDetails.moves[0].version_group_details[0].level_learned_at <=100 ? 'level-chip_three': ''">Level {{pokemonDetails.moves[0].version_group_details[0].level_learned_at}}</div></td>
+                          <td>{{pokemonDetails.moves[0].move.name}}</td>
+                          <td scope="row" class="p-0 m-0"><div class="w-100 d-flex justify-content-center" [ngClass]="pokemonDetails.moves[1].version_group_details[0].level_learned_at <= 3 ? 'level-chip_one' : pokemonDetails.moves[1].version_group_details[0].level_learned_at <= 6 ? 'level-chip_two' : pokemonDetails.moves[1].version_group_details[0].level_learned_at <=100 ? 'level-chip_three': ''">Level {{pokemonDetails.moves[1].version_group_details[0].level_learned_at}}</div></td>
+                          <td>{{pokemonDetails.moves[1].move.name}}</td>
                         </tr>
-                        <tr *ngFor="let move of pokemonDetails.moves.slice(2, 4) let ind=index">
-                          <td scope="row" class="p-0 m-0"><div class="w-100 d-flex justify-content-center" [ngClass]="pokemonDetails.moves.slice(2, 4)[ind].version_group_details[0].level_learned_at < 2 ? 'level-chip_one' : ''">Level {{pokemonDetails.moves.slice(2, 4)[ind].version_group_details[0].level_learned_at}}</div></td>
-                          <td>{{pokemonDetails.moves.slice(2, 4)[ind].move.name}}</td>
-                          
+                        <tr>
+                          <td scope="row" class="p-0 m-0"><div class="w-100 d-flex justify-content-center" [ngClass]="pokemonDetails.moves[2].version_group_details[0].level_learned_at <= 3 ? 'level-chip_one' : pokemonDetails.moves[2].version_group_details[0].level_learned_at <= 6 ? 'level-chip_two' : pokemonDetails.moves[2].version_group_details[0].level_learned_at <=100 ? 'level-chip_three': ''">Level {{pokemonDetails.moves[2].version_group_details[0].level_learned_at}}</div></td>
+                          <td>{{pokemonDetails.moves[2].move.name}}</td>
+                          <td scope="row" class="p-0 m-0"><div class="w-100 d-flex justify-content-center" [ngClass]="pokemonDetails.moves[3].version_group_details[0].level_learned_at <= 3 ? 'level-chip_one' : pokemonDetails.moves[3].version_group_details[0].level_learned_at <= 6 ? 'level-chip_two' : pokemonDetails.moves[3].version_group_details[0].level_learned_at <=100 ? 'level-chip_three': ''">Level {{pokemonDetails.moves[3].version_group_details[0].level_learned_at}}</div></td>
+                          <td>{{pokemonDetails.moves[3].move.name}}</td>
                         </tr>
                       </tbody>
                     </table>
