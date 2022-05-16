@@ -32,43 +32,22 @@
         </div>
     </div>
     <!--------------------------MOVESETS------------------------------------>
+
     <div class="row pb-3">
         <div class="col">
+          <h3>MOVESETS</h3>
             <div class="card container-fluid" style="width: 25rem; padding: 20px;">
                 <div class="card-body p-2">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <table class="table table-borderless">
+                    <table class="table table-borderless p-0">
                       <tbody>
-                        <tr>
-                          <td scope="row" class="text-muted">Type</td>
-                          <td><div class="chip">
-                              Tag 220
-                              <i class="close fas fa-times"></i>
-                            </div></td>
+                        <tr *ngFor="let move of pokemonDetails.moves.slice(0, 2) let i=index">
+                          <td scope="row" class="p-0 m-0"><div class="w-100 d-flex justify-content-center" [ngClass]="pokemonDetails.moves.slice(0, 2)[i].version_group_details[0].level_learned_at < 2 ? 'level-chip_one' : ''">Level {{pokemonDetails.moves.slice(0, 2)[i].version_group_details[0].level_learned_at}}</div></td>
+                          <td>{{pokemonDetails.moves.slice(0, 2)[i].move.name}}</td>
+                          
                         </tr>
-                        <tr>
-                          <td scope="row" class="text-muted">Nummer</td>
-                          <td>Jacob</td>
-                        </tr>
-                        <tr>
-                          <td scope="row" class="text-muted">Gewicht</td>
-                          <td>Larry</td>
-                        </tr>
-                        <tr>
-                          <td scope="row" class="text-muted">Hoogte</td>
-                          <td>Larry</td>
-                        </tr>
-                        <tr>
-                          <td scope="row" class="text-muted">Categorie</td>
-                          <td>Larry</td>
-                        </tr>
-                        <tr>
-                          <td scope="row" class="text-muted">Geslacht</td>
-                          <td>Larry</td>
-                        </tr>
-                        <tr>
-                          <td scope="row" class="text-muted">Vaardigheden</td>
-                          <td>Larry</td>
+                        <tr *ngFor="let move of pokemonDetails.moves.slice(2, 4) let ind=index">
+                          <td scope="row" class="p-0 m-0"><div class="w-100 d-flex justify-content-center" [ngClass]="pokemonDetails.moves.slice(2, 4)[ind].version_group_details[0].level_learned_at < 2 ? 'level-chip_one' : ''">Level {{pokemonDetails.moves.slice(2, 4)[ind].version_group_details[0].level_learned_at}}</div></td>
+                          <td>{{pokemonDetails.moves.slice(2, 4)[ind].move.name}}</td>
                           
                         </tr>
                       </tbody>

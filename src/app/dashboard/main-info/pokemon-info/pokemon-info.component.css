@@ -60,6 +60,59 @@ border-radius: 10px;
     background: #FD7D24;
 }
 
+.ground {
+    background: rgb(127, 75, 75);
+}
+
+.flying {
+    background: #89cef9;
+}
+
+.bug {
+    background: #95C24D;
+}
+
+.dark {
+    background: rgb(43, 30, 30)
+}
+
+.electric {
+    background: yellow
+}
+
+.psychic {
+    background: rgb(235, 84, 110);
+}
+
+.ice {
+    background: skyblue;
+}
+
+.steel {
+    background: rgb(174, 172, 172);
+}
+
+.fairy {
+    background: pink;
+}
+
+.fighting {
+    background: rgb(198, 32, 32)
+}
+
+.rock {
+    background: rgb(216, 182, 140);
+}
+
+.ghost {
+    background: #6b3978;
+}
+
+.dragon {
+    background: #de6ff7;
+}
+
+
 table {
     margin: 0;
     padding: 0;

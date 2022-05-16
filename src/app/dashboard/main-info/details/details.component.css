@@ -18,3 +18,27 @@ table {
   margin: 0;
   padding: 0;
 }
+
+.level-chip_one {
+  background: linear-gradient(109.73deg, rgba(70, 70, 156, 0.2) 0%, rgba(126, 50, 224, 0.2) 100%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 3px 7px;
+    
+    border-radius: 30px;
+    color: purple;
+    border: purple 1px solid;
+}
+
+h3 {
+  font-family: 'SF Pro Text';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.374px;
+
+
+  color: white;
+}

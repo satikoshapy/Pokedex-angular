@@ -1,4 +1,4 @@
-<div class="container {{pokemonDetails.types[pokemonDetails.types.length - 1].type.name}}">
+<div class="container {{pokemonDetails.types[0].type.name}}" [ngClass]="pokemonDetails.types[0].type.name === '' ? 'dark' : ''">
     <div class="row">
         <div class="d-flex justify-content-end"><i class="fa-solid fa-heart"></i></div> 
     </div>
