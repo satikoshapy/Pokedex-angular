@@ -9,7 +9,8 @@ import { PokemonDetail } from 'src/shared/models/pokemon-details.model';
 export class MainInfoComponent implements OnInit {
   @Input() pokemonDetails!:PokemonDetail
   pokemonName = "Bulbasaur" //default for now
-  backgroundStyles!: ['grass', 'poison', 'normal', 'water', 'fire']
+  likedPokemons!:PokemonDetail[];
+
   constructor() { }
 
   ngOnChanes() {
@@ -21,6 +22,17 @@ export class MainInfoComponent implements OnInit {
     
   }
 
-  
+  onLike(){
+    //check if there's already something in the favorites
+    if (localStorage.getItem('favorites') == null){
+      localStorage.setItem("favorites", '[]');
+    }
 
+    //get the favorites and slap it to the newly liked poke
+    const likedPokemons = JSON.parse(localStorage.getItem('favorites') || '[]');
+
+    likedPokemons.push(this.pokemonDetails);
+    localStorage.setItem('favorites', JSON.stringify(likedPokemons));
+
+  }
 }

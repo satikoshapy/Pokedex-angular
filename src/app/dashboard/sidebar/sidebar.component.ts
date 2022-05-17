@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { DataStorageService } from 'src/app/data-storage.service';
+import { PokemonDetail } from 'src/shared/models/pokemon-details.model';
 import { Pokemon } from 'src/shared/models/pokemon.model';
 
 @Component({
@@ -38,6 +39,12 @@ export class SidebarComponent implements OnInit {
 
   getPokemonById(id:number){
     this.pokemonId.emit(id)
+  }
+
+  onFavorites(){
+    const likedPokemons = JSON.parse(localStorage.getItem('favorites') || '[]');
+
+    this.pokemons$ = likedPokemons;
   }
 }
 

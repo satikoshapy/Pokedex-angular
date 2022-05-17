@@ -65,3 +65,15 @@ letter-spacing: 0.374px;
 
 color: #FFFFFF;
 }
+
+.fa-regular.fa-heart {
+    padding-right: 35px; 
+    margin-top: 50px;
+    color: white;
+    font-weight: 200;
+}
+
+.fa-regular.fa-heart:hover {
+    color: red;
+    font-weight: 600;
+}

@@ -8,3 +8,8 @@ border: none;
 background: #EFF0F1;
 border-radius: 10px;
 }
+
+.fa-solid {
+    
+    font-weight: 600;
+}
