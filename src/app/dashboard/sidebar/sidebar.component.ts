@@ -14,6 +14,7 @@ export class SidebarComponent implements OnInit {
   teamTitle = "Mijn Team";
   favTitle = "Favorieten";
   pokemons$!: Pokemon[];
+  showBackButton = false;
   @Output() pokemonId = new EventEmitter<number>();
   term!:string;
   constructor(private dataStorage: DataStorageService) { }
@@ -25,6 +26,12 @@ export class SidebarComponent implements OnInit {
         this.pokemons$ = data;
         console.log(this.pokemons$)
       })
+  }
+
+  getAllPokemons(){
+    
+    this.ngOnInit()
+    this.showBackButton = false;
   }
 
   onPokemonId(id:number){
@@ -43,8 +50,10 @@ export class SidebarComponent implements OnInit {
 
   onFavorites(){
     const likedPokemons = JSON.parse(localStorage.getItem('favorites') || '[]');
-
+    
     this.pokemons$ = likedPokemons;
+
+    this.showBackButton = true;
   }
 }
 

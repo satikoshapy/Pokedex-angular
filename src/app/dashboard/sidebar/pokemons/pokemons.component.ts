@@ -22,8 +22,6 @@ export class PokemonsComponent implements OnInit {
       })
   }
 
-  getPokemonById(id:number){
-    this.pokemonId.emit(id)
-  }
+  
 
 }
