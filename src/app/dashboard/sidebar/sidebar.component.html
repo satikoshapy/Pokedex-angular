@@ -14,11 +14,19 @@
     </div>
     <div class="row">
       <div class="col-lg pb-3">
-        <input type="text" placeholder="Pokemon zoeken" />
+        <form (keydown)="keyDownFunction($event)">
+            <div class="form-group">
+              <input 
+              type="text" 
+              placeholder="Pokemon zoeken"
+              name="term"
+              class="form-control"
+              [(ngModel)]="term">
+            </div>
+        </form>
       </div>
     </div>
-    
-          <div class="row mb-3 p-2">
+    <div class="row mb-3 p-2">
             <div class="col-5 m-0 p-0 d-flex justify-content-start">
                 <app-button
                         class="img-fluid col-lg-12 w-100 m-0 p-0"
@@ -37,7 +45,9 @@
       
     <div class="row" style="height: 550px; overflow-y: scroll">
       <div class="col-lg pb-3 p-0 m-0">
-        <app-pokemons (pokemonId)="onPokemonId($event)"></app-pokemons>
+        <div class="overflow-auto" *ngFor="let pokemon of pokemons$ |filter:term">
+            <app-pokemon [pokemon]="pokemon" (pokemonId)="getPokemonById($event)"></app-pokemon>
+        </div>
       </div>
     </div>
   </div>
