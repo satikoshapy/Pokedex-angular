@@ -15,6 +15,7 @@ export class SidebarComponent implements OnInit {
   favTitle = "Favorieten";
   pokemons$!: Pokemon[];
   showBackButton = false;
+  favSubtitle = 0;
   @Output() pokemonId = new EventEmitter<number>();
   term!:string;
   constructor(private dataStorage: DataStorageService) { }
@@ -26,6 +27,8 @@ export class SidebarComponent implements OnInit {
         this.pokemons$ = data;
         console.log(this.pokemons$)
       })
+
+      this.favSubtitle = JSON.parse(localStorage.getItem('favorites') || '[]').length
   }
 
   getAllPokemons(){
