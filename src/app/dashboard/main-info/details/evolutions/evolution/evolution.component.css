@@ -1,0 +1,97 @@
+.type-chip{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 3px 7px;
+    
+    border-radius: 100px;
+    color: white;
+}
+
+.card {
+    font-family: 'SF Pro Text';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 18px;
+/* identical to box height */
+
+letter-spacing: -0.408px;
+
+background: #FFFFFF;
+box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.04);
+border-radius: 10px;
+}
+
+
+.poison {
+    background:#BA7EC8;
+}
+
+.grass {
+    background: #95C24D;
+}
+
+.water {
+    background: #4592C3;
+}
+
+.normal {
+    background: #A3ACAE;
+}
+
+.fire {
+    background: #FD7D24;
+}
+
+.ground {
+    background: rgb(127, 75, 75);
+}
+
+.flying {
+    background: #89cef9;
+}
+
+.bug {
+    background: #95C24D;
+}
+
+.dark {
+    background: rgb(43, 30, 30)
+}
+
+.electric {
+    background: yellow
+}
+
+.psychic {
+    background: rgb(235, 84, 110);
+}
+
+.ice {
+    background: skyblue;
+}
+
+.steel {
+    background: rgb(174, 172, 172);
+}
+
+.fairy {
+    background: pink;
+}
+
+.fighting {
+    background: rgb(198, 32, 32)
+}
+
+.rock {
+    background: rgb(216, 182, 140);
+}
+
+.ghost {
+    background: #6b3978;
+}
+
+.dragon {
+    background: #de6ff7;
+}

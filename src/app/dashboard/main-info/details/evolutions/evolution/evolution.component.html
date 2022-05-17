@@ -1,4 +1,6 @@
-<div class="card-body p-0" *ngFor="let specie of species">
+<div class="card p-0 mb-4 w-100 d-flex d-wrap" style="max-height: 100px;" 
+*ngFor="let specie of species">
+<div class="card-body p-0">
     <div class="row d-flex d-row">
     <div class="col-3 p-2 d-flex justify-content-start">
       <img class="ml-3" src={{specie.sprites.front_default}} alt="">
@@ -37,3 +39,4 @@
   </div>
   </div>
   </div>
+</div>

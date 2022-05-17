@@ -14,10 +14,11 @@ export class MainInfoComponent implements OnInit {
 
   ngOnChanes() {
     this.ngOnInit();
+    localStorage.setItem("selectedPokemonID", JSON.stringify(this.pokemonDetails.id));
   }
 
   ngOnInit(): void {
-
+    
   }
 
   

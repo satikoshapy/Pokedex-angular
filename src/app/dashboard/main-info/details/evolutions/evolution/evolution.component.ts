@@ -7,16 +7,25 @@ import { PokemonDetail } from 'src/shared/models/pokemon-details.model';
   styleUrls: ['./evolution.component.css']
 })
 export class EvolutionComponent implements OnInit {
-  species!:PokemonDetail[];
+  
+  @Input() species!:PokemonDetail[];
   constructor() { }
 
   ngOnChanges(){
-    this.ngOnInit();
+      this.ngOnInit();
+      if(this.species.length > 3){
+        this.species.splice(1,4)
+      }
+    
   }
 
   ngOnInit(): void {
 
-    this.species = JSON.parse(localStorage.getItem('species') || '[]');
+    if(this.species.length > 3){
+      this.species.splice(1,4)
+    }
+
+    //this.species = JSON.parse(localStorage.getItem('species') || '[]');
   }
 
 }
