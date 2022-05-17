@@ -16,6 +16,7 @@ import { PokemonInfoComponent } from './dashboard/main-info/pokemon-info/pokemon
 import { DetailsComponent } from './dashboard/main-info/details/details.component';
 import { EvolutionsComponent } from './dashboard/main-info/details/evolutions/evolutions.component';
 import { EvolutionComponent } from './dashboard/main-info/details/evolutions/evolution/evolution.component';
+import { HeartClickDirective } from './dashboard/main-info/heart-click.directive';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { EvolutionComponent } from './dashboard/main-info/details/evolutions/evo
     PokemonInfoComponent,
     DetailsComponent,
     EvolutionsComponent,
-    EvolutionComponent
+    EvolutionComponent,
+    HeartClickDirective
   ],
   imports: [
     BrowserModule,
