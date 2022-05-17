@@ -14,7 +14,7 @@
             <tr class="d-flex d-wrap d-flex justify-content-start">
               <td class="text-muted" style="font-weight: 400;
               font-size: 15px;
-              line-height: 18px;">Nr.{{pokemon.id}}</td>
+              line-height: 18px;">Nr.{{pokemon.id|filter:term}}</td>
               <td></td>
               <td></td>
             </tr>
@@ -29,7 +29,7 @@
             <div 
             class="type-chip w-100 d-flex justify-content-center pl-2 pr-2 {{type.type.name}}" 
             style="font-weight: 400; font-size: 12px;line-height: 14px;"
-            > {{type.type.name}}
+            > {{type.type.name |filter:term}}
           </div>
           </td>
           <td class="ml-10"><button style="border:none; background: none; color:gray; padding-top: 0px" (click)="onSelect(pokemon.id)"><i class="fa-solid fa-angle-right"></i></button></td>

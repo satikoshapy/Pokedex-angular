@@ -10,6 +10,7 @@ import { PokemonType } from 'src/shared/models/type.model';
 export class PokemonComponent implements OnInit {
   @Input() pokemon!:Pokemon;
   @Output() pokemonId = new EventEmitter<number>();
+  term!:string;
   constructor() { }
   
   ngOnInit(): void {
